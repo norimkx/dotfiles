@@ -2,6 +2,8 @@
 -- Default options that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/options.lua
 -- Add any additional options here
 
+vim.opt.spelllang = { "en", "cjk" }
+
 if vim.fn.has("wsl") == 1 then
   if vim.fn.executable("wl-copy") == 0 then
     print("wl-clipboard not found, clipboard integration won't work")
