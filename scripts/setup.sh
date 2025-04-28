@@ -19,7 +19,6 @@ eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 # 各種インストール
 brew install ast-grep
 brew install connect
-brew install curl
 brew install fd
 brew install fish
 brew install fzf
