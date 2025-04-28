@@ -3,7 +3,7 @@
 ## Setup スクリプトの実行
 
 ```bash
-sudo ./scripts/setup.sh
+./scripts/setup.sh
 ```
 
 ## Link スクリプトの実行
