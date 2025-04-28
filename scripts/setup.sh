@@ -17,18 +17,26 @@ echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >>"$HOME/.bashrc"
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 # 各種インストール
-brew install wget curl
-brew install zip unzip
-brew install gcc
-brew install fzf
-brew install fd
-brew install ripgrep
 brew install ast-grep
-brew install lazygit
-brew install neovim
+brew install connect
+brew install curl
+brew install fd
 brew install fish
-brew install stylua
+brew install fzf
+brew install gcc
+brew install lazygit
 brew install luarocks
+brew install markdownlint-cli
+brew install markdownlint-cli2
+brew install marksman
+brew install neovim
+brew install prettier
+brew install ripgrep
+brew install stylua
+brew install tree
+brew install unzip
+brew install wget
+brew install zip
 
 # nvm のインストール
 brew install nvm
@@ -38,3 +46,7 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "/home/linuxbrew/.linuxbrew/opt/nvm/nvm.sh" ] && \. "/home/linuxbrew/.linuxbrew/opt/nvm/nvm.sh"
 [ -s "/home/linuxbrew/.linuxbrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/home/linuxbrew/.linuxbrew/opt/nvm/etc/bash_completion.d/nvm"'
 echo "$NVM_CONFIG" >>"$HOME/.bashrc"
+
+# dotnet の設定
+echo >>"$HOME/.bashrc"
+echo "export DOTNET_SYSTEM_GLOBALIZATION_INVARIANT=1" >>"$HOME/.bashrc"
