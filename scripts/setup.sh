@@ -25,7 +25,6 @@ brew install fzf
 brew install gcc
 brew install lazygit
 brew install luarocks
-brew install marksman
 brew install neovim
 brew install ripgrep
 brew install stylua
