@@ -25,11 +25,8 @@ brew install fzf
 brew install gcc
 brew install lazygit
 brew install luarocks
-brew install markdownlint-cli
-brew install markdownlint-cli2
 brew install marksman
 brew install neovim
-brew install prettier
 brew install ripgrep
 brew install stylua
 brew install tree
