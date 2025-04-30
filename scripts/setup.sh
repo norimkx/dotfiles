@@ -22,7 +22,6 @@ brew install connect
 brew install fd
 brew install fish
 brew install fzf
-brew install gcc
 brew install lazygit
 brew install luarocks
 brew install neovim
