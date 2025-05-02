@@ -13,14 +13,3 @@ if vim.fn.has("wsl") == 1 then
     command = 'call system("zenhan.exe 0")',
   })
 end
-
-vim.api.nvim_create_autocmd("BufWritePre", {
-  group = vim.api.nvim_create_augroup("organize_imports_and_format", {}),
-  callback = function(event)
-    local organize_imports_action = LazyVim.lsp.action["source.organizeImports"]
-    if organize_imports_action then
-      organize_imports_action()
-    end
-    require("lazyvim.util.format").format({ buf = event.buf })
-  end,
-})
