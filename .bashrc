@@ -90,6 +90,9 @@ fi
 #alias ll='ls -l'
 #alias la='ls -A'
 #alias l='ls -CF'
+alias ll='ls -lAF'
+alias la='ls -AF'
+alias l='ls -F'
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
