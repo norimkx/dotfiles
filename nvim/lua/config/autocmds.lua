@@ -9,7 +9,15 @@
 
 if vim.fn.has("wsl") == 1 then
   vim.api.nvim_create_autocmd({ "InsertLeave", "CmdlineLeave" }, {
-    pattern = "*",
     command = 'call system("zenhan.exe 0")',
   })
 end
+
+vim.api.nvim_create_autocmd("BufWritePre", {
+  callback = function()
+    local organize_imports_action = LazyVim.lsp.action["source.organizeImports"]
+    if organize_imports_action then
+      organize_imports_action()
+    end
+  end,
+})
