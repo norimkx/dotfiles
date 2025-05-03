@@ -16,6 +16,7 @@ brew install connect
 brew install fd
 brew install fish
 brew install fzf
+brew install gh
 brew install lazygit
 brew install luarocks
 brew install neovim
@@ -26,3 +27,6 @@ brew install tree
 brew install unzip
 brew install wget
 brew install zip
+
+# GitHub CLI の認証設定
+gh auth login
