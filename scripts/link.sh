@@ -5,6 +5,7 @@ declare -A links=(
   ["nvim"]="$HOME/.config"
   [".bashrc"]="$HOME"
   [".gitconfig"]="$HOME"
+  [".tmux.conf"]="$HOME"
 )
 
 # スクリプト自身の絶対パスを取得
