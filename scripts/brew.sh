@@ -23,6 +23,7 @@ brew install neovim
 brew install nvm
 brew install ripgrep
 brew install stylua
+brew install tmux
 brew install tree
 brew install unzip
 brew install wget
