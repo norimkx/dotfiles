@@ -1,10 +1,8 @@
 return {
   {
-    "williamboman/mason.nvim",
+    "mason-org/mason.nvim",
     opts = {
-      ensure_installed = {
-        "typos-lsp",
-      },
+      ensure_installed = { "typos-lsp" },
     },
   },
 }
