@@ -17,12 +17,14 @@ brew install fd
 brew install fish
 brew install fzf
 brew install gh
+brew install imagemagick
 brew install jq
 brew install lazygit
 brew install luarocks
 brew install neovim
 brew install nvm
 brew install ripgrep
+brew install starship
 brew install stylua
 brew install tmux
 brew install tree

@@ -114,6 +114,7 @@ if ! shopt -oq posix; then
 fi
 
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+eval "$(starship init bash)"
 
 export DOTNET_SYSTEM_GLOBALIZATION_INVARIANT=1
 
