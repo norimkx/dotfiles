@@ -3,6 +3,7 @@
 # シンボリックリンクを作成する設定 (dotfiles からの相対パス = リンクを作成するディレクトリ)
 declare -A links=(
   [".config/nvim"]="$HOME/.config"
+  [".config/starship.toml"]="$HOME/.config"
   [".bashrc"]="$HOME"
   [".gitconfig"]="$HOME"
   [".tmux.conf"]="$HOME"
