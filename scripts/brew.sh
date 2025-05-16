@@ -34,3 +34,6 @@ brew install zip
 
 # GitHub CLI の認証設定
 gh auth login
+
+# Install Tmux Plugin Manager
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
