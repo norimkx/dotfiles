@@ -1,16 +1,16 @@
 #!/bin/bash
 
-# パッケージリストの更新、インストール済みパッケージのアップデート
+# Update package lists and upgrade installed packages
 sudo apt update && sudo apt upgrade -y
 
-# Homebrew に必要なパッケージのインストール
+# Install necessary packages for Homebrew
 sudo apt install -y build-essential procps curl file git
 
-# Homebrew のインストール
+# Install Homebrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
-# 各種インストール
+# Install formulae
 brew install ast-grep
 brew install connect
 brew install fd
@@ -32,7 +32,7 @@ brew install unzip
 brew install wget
 brew install zip
 
-# GitHub CLI の認証設定
+# Authenticate GitHub CLI
 gh auth login
 
 # Install Tmux Plugin Manager
