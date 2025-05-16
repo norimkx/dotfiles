@@ -1,46 +1,48 @@
 #!/bin/bash
 
-# シンボリックリンクを作成する設定 (dotfiles からの相対パス = リンクを作成するディレクトリ)
-declare -A links=(
-  [".config/nvim"]="$HOME/.config"
-  [".config/starship.toml"]="$HOME/.config"
-  [".bashrc"]="$HOME"
-  [".gitconfig"]="$HOME"
-  [".tmux.conf"]="$HOME"
+# Configuration for creating symbolic links (relative path from dotfiles)
+declare -a links=(
+  ".bashrc"
+  ".config/nvim"
+  ".config/starship.toml"
+  ".gitconfig"
+  ".tmux.conf"
 )
 
-# スクリプト自身の絶対パスを取得
 SCRIPT_PATH=$(realpath "$0")
-
-# スクリプトが存在するディレクトリの絶対パスを取得
 SCRIPT_DIR=$(dirname "$SCRIPT_PATH")
-
-# dotfiles ディレクトリの絶対パスを取得
 DOTFILES_ROOT=$(dirname "$SCRIPT_DIR")
 
-# シンボリックリンクを作成する関数
+# Function to create or update a symbolic link
 create_symlink() {
   local source_rel="$1"
   local source_abs="$DOTFILES_ROOT/$source_rel"
-  local target_dir="$2"
+  local target_base="$HOME"
+  local target_dir
 
-  # 作成するリンクのディレクトリが存在しない場合は作成する
-  if [ ! -d "$target_dir" ]; then
-    mkdir -p "$target_dir"
-    echo "ディレクトリを作成しました: $target_dir"
+  if [ "$(dirname "$source_rel")" = "." ]; then
+    target_dir="$target_base"
+  else
+    target_dir="$target_base/$(dirname "$source_rel")"
   fi
 
-  # シンボリックリンクを作成または更新する
+  # Create the target directory if it does not exist
+  if [ ! -d "$target_dir" ]; then
+    mkdir -p "$target_dir"
+    echo "Created directory: $target_dir"
+  fi
+
+  # Create or update the symbolic link
   if ln -sfv "$source_abs" "$target_dir"; then
     :
   else
-    echo "シンボリックリンクの作成または更新に失敗しました: '$target_dir/$source_rel' -> '$source_abs'"
+    echo "Failed to create or update symbolic link: '$target_dir/$source_rel' -> '$source_abs'"
   fi
 }
 
-# 設定に基づいてシンボリックリンクを作成する
-for source in "${!links[@]}"; do
-  create_symlink "$source" "${links[$source]}"
+# Create symbolic links based on the configuration
+for source_rel in "${links[@]}"; do
+  create_symlink "$source_rel"
 done
 
-echo "シンボリックリンクの作成が完了しました"
+echo "Symbolic link creation completed"
