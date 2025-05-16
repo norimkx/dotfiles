@@ -2,7 +2,7 @@
 
 # シンボリックリンクを作成する設定 (dotfiles からの相対パス = リンクを作成するディレクトリ)
 declare -A links=(
-  ["nvim"]="$HOME/.config"
+  [".config/nvim"]="$HOME/.config"
   [".bashrc"]="$HOME"
   [".gitconfig"]="$HOME"
   [".tmux.conf"]="$HOME"
