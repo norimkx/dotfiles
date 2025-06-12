@@ -3,6 +3,7 @@
 # Configuration for creating symbolic links (relative path from dotfiles)
 declare -a links=(
   ".bashrc"
+  ".config/lazygit"
   ".config/nvim"
   ".config/starship.toml"
   ".gitconfig"
