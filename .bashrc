@@ -113,6 +113,8 @@ if ! shopt -oq posix; then
   fi
 fi
 
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
 export DOTNET_SYSTEM_GLOBALIZATION_INVARIANT=1
 
 export NVM_DIR="$HOME/.nvm"
@@ -121,5 +123,4 @@ export NVM_DIR="$HOME/.nvm"
 
 export PATH="/home/linuxbrew/.linuxbrew/opt/postgresql@17/bin:$PATH"
 
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 eval "$(starship init bash)"
