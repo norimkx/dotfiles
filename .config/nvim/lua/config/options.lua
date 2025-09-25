@@ -6,3 +6,5 @@ local opt = vim.opt
 
 opt.linebreak = false
 opt.spelllang = { "en", "cjk" }
+
+vim.env.JAVA_HOME = "/home/linuxbrew/.linuxbrew/opt/openjdk@21"
