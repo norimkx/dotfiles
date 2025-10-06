@@ -10,6 +10,7 @@
 [init]
 	defaultBranch = main
 [core]
-	quotepath = false
+	editor = nvim
+	quotePath = false
 [diff]
 	indentHeuristic = true
