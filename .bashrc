@@ -90,13 +90,15 @@ fi
 #alias ll='ls -l'
 #alias la='ls -A'
 #alias l='ls -CF'
-alias ll='ls -lA'
-alias la='ls -A'
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
 # ~/.bash_aliases, instead of adding them here directly.
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
+
+alias ll='ls -lA'
+alias la='ls -A'
+alias open='explorer.exe'
 
 if [ -f ~/.bash_aliases ]; then
   . ~/.bash_aliases
@@ -121,6 +123,9 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "/home/linuxbrew/.linuxbrew/opt/nvm/nvm.sh" ] && \. "/home/linuxbrew/.linuxbrew/opt/nvm/nvm.sh"
 [ -s "/home/linuxbrew/.linuxbrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/home/linuxbrew/.linuxbrew/opt/nvm/etc/bash_completion.d/nvm"
 
-export PATH="/home/linuxbrew/.linuxbrew/opt/postgresql@17/bin:$PATH"
+# export JAVA_HOME="/home/linuxbrew/.linuxbrew/opt/openjdk@17"
+# export CPPFLAGS="-I$JAVA_HOME/include"
+# export PATH="$JAVA_HOME/bin:$PATH"
+# export PATH="/home/linuxbrew/.linuxbrew/opt/postgresql@17/bin:$PATH"
 
 eval "$(starship init bash)"
