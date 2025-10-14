@@ -14,7 +14,6 @@ eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 brew install ast-grep
 brew install connect
 brew install fd
-brew install fish
 brew install fzf
 brew install gh
 brew install imagemagick
