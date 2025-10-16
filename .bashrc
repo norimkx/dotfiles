@@ -123,9 +123,10 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "/home/linuxbrew/.linuxbrew/opt/nvm/nvm.sh" ] && \. "/home/linuxbrew/.linuxbrew/opt/nvm/nvm.sh"
 [ -s "/home/linuxbrew/.linuxbrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/home/linuxbrew/.linuxbrew/opt/nvm/etc/bash_completion.d/nvm"
 
-# export JAVA_HOME="/home/linuxbrew/.linuxbrew/opt/openjdk@17"
-# export CPPFLAGS="-I$JAVA_HOME/include"
-# export PATH="$JAVA_HOME/bin:$PATH"
-# export PATH="/home/linuxbrew/.linuxbrew/opt/postgresql@17/bin:$PATH"
+export JAVA_HOME="/home/linuxbrew/.linuxbrew/opt/openjdk"
+export CPPFLAGS="-I$JAVA_HOME/include"
+
+export PATH="$JAVA_HOME/bin:$PATH"
+export PATH="/home/linuxbrew/.linuxbrew/opt/postgresql@17/bin:$PATH"
 
 eval "$(starship init bash)"
