@@ -1,14 +1,12 @@
 #!/bin/bash
 
-# Downloads tools and places executables in ~/bin
-
-# Configuration
+# Configuration for downloading tools
 declare -A tools=(
   ["win32yank"]="https://github.com/equalsraf/win32yank/releases/download/v0.1.1/win32yank-x64.zip;win32yank.exe"
   ["zenhan"]="https://github.com/iuchim/zenhan/releases/download/v0.0.1/zenhan.zip;zenhan/bin64/zenhan.exe"
 )
 target_bin_dir="$HOME/bin"
-tmp_dir="tmp_download"
+tmp_dir="$(uuidgen)"
 
 # Create ~/bin directory if it doesn't exist
 mkdir -p "$target_bin_dir"
