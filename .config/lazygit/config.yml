@@ -1,4 +1,8 @@
 gui:
+  language: "en"
+  timeFormat: "01/02 15:04"
+  shortTimeFormat: "15:04"
+  nerdFontsVersion: "3"
   theme:
     activeBorderColor:
       - "#df8e1d"
@@ -21,16 +25,10 @@ gui:
       - "#df8e1d"
   authorColors:
     "*": "#7287fd"
-  nerdFontsVersion: "3"
 git:
   parseEmoji: true
   log:
     showWholeGraph: true
 os:
   editPreset: "nvim"
-  copyToClipboardCmd: >
-    if [[ "$TERM" =~ ^(screen|tmux) ]]; then
-      printf "\033Ptmux;\033\033]52;c;$(printf %s {{text}} | base64 -w 0)\a\033\\" > /dev/tty
-    else
-      printf "\033]52;c;$(printf %s {{text}} | base64 -w 0)\a" > /dev/tty
-    fi
+  copyToClipboardCmd: "echo {{text}} | win32yank.exe -i"
