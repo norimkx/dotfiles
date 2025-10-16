@@ -23,9 +23,7 @@ return {
     opts = {
       checkbox = {
         enabled = true,
-        checked = {
-          scope_highlight = "@markup.strikethrough",
-        },
+        checked = { scope_highlight = "@markup.strikethrough" },
       },
     },
   },
