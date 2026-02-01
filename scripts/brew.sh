@@ -20,6 +20,7 @@ brew install jq
 brew install lazygit
 brew install luarocks
 brew install neovim
+brew install nkf
 brew install nvm
 brew install openjdk
 brew install ripgrep
