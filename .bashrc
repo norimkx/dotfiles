@@ -127,6 +127,5 @@ export JAVA_HOME="/home/linuxbrew/.linuxbrew/opt/openjdk"
 export CPPFLAGS="-I$JAVA_HOME/include"
 
 export PATH="$JAVA_HOME/bin:$PATH"
-export PATH="/home/linuxbrew/.linuxbrew/opt/postgresql@17/bin:$PATH"
 
 eval "$(starship init bash)"
