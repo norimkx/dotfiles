@@ -5,8 +5,10 @@ declare -A tools=(
   ["win32yank"]="https://github.com/equalsraf/win32yank/releases/download/v0.1.1/win32yank-x64.zip;win32yank.exe"
   ["zenhan"]="https://github.com/iuchim/zenhan/releases/download/v0.0.1/zenhan.zip;zenhan/bin64/zenhan.exe"
 )
+
 target_bin_dir="$HOME/bin"
 tmp_dir="$(uuidgen)"
+errors=0
 
 # Create ~/bin directory if it doesn't exist
 mkdir -p "$target_bin_dir"
@@ -21,51 +23,53 @@ for tool_name in "${!tools[@]}"; do
   target_file=$(basename "$target_path")
 
   echo ""
-  echo "=== Starting processing for $tool_name ==="
+  echo "==> Installing $tool_name"
+
+  success=true
 
   # Download
-  echo "Downloading from $download_url..."
   if curl -LO "$download_url"; then
-    echo "Downloaded $download_zip"
 
     # Extract
-    echo "Extracting $download_zip to $tmp_dir..."
     if unzip -d "$tmp_dir" "$download_zip"; then
-      echo "Extracted $download_zip"
 
       # Move and grant execute permission
       source_path="$tmp_dir/$target_path"
       destination_path="$target_bin_dir/$target_file"
 
-      echo "Moving $source_path to $destination_path..."
       if mv "$source_path" "$destination_path"; then
-        echo "Moved to $destination_path"
-        echo "Granting execute permission to $destination_path..."
         if chmod +x "$destination_path"; then
-          echo "Granted execute permission to $destination_path"
+          :
         else
-          echo "Error: Failed to grant execute permission to $destination_path"
+          echo "[Error] Failed to set execution permission: $destination_path"
+          success=false
         fi
       else
-        echo "Error: Failed to move $source_path to $destination_path"
+        echo "[Error] Failed to move: $source_path -> $destination_path"
+        success=false
       fi
 
       # Delete the downloaded zip file
       rm "$download_zip"
     else
-      echo "Error: Failed to extract $download_zip"
+      echo "[Error] Failed to extract: $download_zip"
+      success=false
     fi
   else
-    echo "Error: Failed to download from $download_url"
+    echo "[Error] Failed to download: $download_url"
+    success=false
+  fi
+
+  if [ "$success" = false ]; then
+    ((errors++))
   fi
 done
 
 # Delete the temporary directory
-echo ""
-echo "Deleting temporary directory ($tmp_dir)..."
 rm -rf "$tmp_dir"
-echo "Deleted temporary directory"
 
-echo "Script completed"
+if [ "$errors" -ne 0 ]; then
+  exit 1
+fi
 
 exit 0

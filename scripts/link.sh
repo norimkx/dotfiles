@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Configuration for creating symbolic links (relative path from dotfiles)
+# Configuration for creating symlinks (relative path from dotfiles)
 declare -a links=(
   ".config/lazygit"
   ".config/nvim"
@@ -14,7 +14,7 @@ SCRIPT_PATH=$(realpath "$0")
 SCRIPT_DIR=$(dirname "$SCRIPT_PATH")
 DOTFILES_ROOT=$(dirname "$SCRIPT_DIR")
 
-# Function to create or update a symbolic link
+# Function to create a symlink
 create_symlink() {
   local source_rel="$1"
   local source_abs="$DOTFILES_ROOT/$source_rel"
@@ -30,20 +30,26 @@ create_symlink() {
   # Create the target directory if it does not exist
   if [ ! -d "$target_dir" ]; then
     mkdir -p "$target_dir"
-    echo "Created directory: $target_dir"
   fi
 
-  # Create or update the symbolic link
+  # Create the symlink
   if ln -sfv "$source_abs" "$target_dir"; then
-    :
+    return 0
   else
-    echo "Failed to create or update symbolic link: '$target_dir/$source_rel' -> '$source_abs'"
+    echo "[Error] Failed to create symlink: '$target_dir/$source_rel' -> '$source_abs'"
+    return 1
   fi
 }
 
-# Create symbolic links based on the configuration
+errors=0
+
+# Create symlinks
 for source_rel in "${links[@]}"; do
-  create_symlink "$source_rel"
+  if ! create_symlink "$source_rel"; then
+    ((errors++))
+  fi
 done
 
-echo "Symbolic link creation completed"
+if [ "$errors" -ne 0 ]; then
+  exit 1
+fi
