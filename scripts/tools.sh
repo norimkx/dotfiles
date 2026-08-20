@@ -6,7 +6,7 @@ declare -A tools=(
   ["zenhan"]="https://github.com/iuchim/zenhan/releases/download/v0.0.1/zenhan.zip;zenhan/bin64/zenhan.exe"
 )
 
-target_bin_dir="$HOME/bin"
+target_bin_dir="$HOME/.local/bin"
 tmp_dir="$(uuidgen)"
 errors=0
 
