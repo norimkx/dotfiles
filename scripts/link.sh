@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Configuration for creating symlinks (relative path from dotfiles)
 declare -a links=(
