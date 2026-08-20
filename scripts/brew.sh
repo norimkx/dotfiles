@@ -1,11 +1,5 @@
 #!/bin/bash
 
-# Update package lists and upgrade installed packages
-sudo apt update && sudo apt upgrade -y
-
-# Install necessary packages for Homebrew
-sudo apt install -y build-essential procps curl file git
-
 # Install Homebrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
