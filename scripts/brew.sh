@@ -7,8 +7,5 @@ eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 # Install formulae
 brew bundle
 
-# Install Tmux Plugin Manager
-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-
 # Authenticate GitHub CLI
 gh auth login
