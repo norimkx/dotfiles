@@ -96,10 +96,6 @@ fi
 # ~/.bash_aliases, instead of adding them here directly.
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
 
-alias ll='ls -lA'
-alias la='ls -A'
-alias open='explorer.exe'
-
 if [ -f ~/.bash_aliases ]; then
   . ~/.bash_aliases
 fi
@@ -115,17 +111,15 @@ if ! shopt -oq posix; then
   fi
 fi
 
+# ----------------------------------------
+# Custom Settings
+# ----------------------------------------
+
+alias ll='ls -lA'
+alias la='ls -A'
+alias open='explorer.exe'
+
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-
-export DOTNET_SYSTEM_GLOBALIZATION_INVARIANT=1
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "/home/linuxbrew/.linuxbrew/opt/nvm/nvm.sh" ] && \. "/home/linuxbrew/.linuxbrew/opt/nvm/nvm.sh"
-[ -s "/home/linuxbrew/.linuxbrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/home/linuxbrew/.linuxbrew/opt/nvm/etc/bash_completion.d/nvm"
-
-export JAVA_HOME="/home/linuxbrew/.linuxbrew/opt/openjdk"
-export CPPFLAGS="-I$JAVA_HOME/include"
-
-export PATH="$JAVA_HOME/bin:$PATH"
-
+eval "$(/home/nori/.local/bin/mise activate bash)"
 eval "$(starship init bash)"
+export DOTNET_SYSTEM_GLOBALIZATION_INVARIANT=1
