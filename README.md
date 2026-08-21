@@ -31,6 +31,7 @@ WSL2 (Debian) 環境向けの個人用 dotfiles です。
 - ターミナルマルチプレクサ: [tmux](https://github.com/tmux/tmux) ([tpm](https://github.com/tmux-plugins/tpm) でプラグイン管理)
 - パッケージ管理: [Homebrew](https://brew.sh/) ([Brewfile](scripts/Brewfile) で一括管理) / mise (Node.js, Java などのランタイム管理)
 - Git UI: [lazygit](https://github.com/jesseduffield/lazygit)
+- Git diff: [delta](https://github.com/dandavison/delta) ([catppuccin](https://github.com/catppuccin/delta) latte テーマ適用、git / lazygit 共通)
 
 ## セットアップ
 

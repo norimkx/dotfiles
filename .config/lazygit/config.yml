@@ -29,6 +29,9 @@ git:
   parseEmoji: true
   log:
     showWholeGraph: true
+  diffRenderers:
+    - colorArg: always
+      command: delta --paging=never
 os:
   editPreset: "nvim"
   copyToClipboardCmd: "echo {{text}} | win32yank.exe -i"
