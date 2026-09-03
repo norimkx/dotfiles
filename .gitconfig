@@ -11,6 +11,8 @@
 	indentHeuristic = true
 [diff "to_utf8"]
 	textconv = nkf -w
+[fetch]
+	prune = true
 [interactive]
 	diffFilter = delta --color-only
 [delta]
